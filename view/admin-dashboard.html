@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Online Exam System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="public/admin.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Online Exam System - Admin</a>
+            <div class="navbar-nav ms-auto">
+                <span class="navbar-text me-3">Welcome, <span id="adminName"></span></span>
+                <button class="btn btn-outline-danger" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-header">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 class="text-center">Admin Dashboard</h1>
+                    <p class="text-center">CSPDCL Vocational Training Online Exam System</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <!-- Statistics Cards -->
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="card stats-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Students</h5>
+                        <h3 class="text-primary" id="totalStudents">0</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card stats-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Active Exams</h5>
+                        <h3 class="text-success" id="activeExams">0</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card stats-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Completed Exams</h5>
+                        <h3 class="text-warning" id="completedExams">0</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card stats-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Average Score</h5>
+                        <h3 class="text-info" id="averageScore">0%</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Action Cards -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card manage-exams-card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">
+                            <i class="fas fa-clipboard-list"></i> Manage Exams
+                        </h5>
+                        <p class="card-text">Create, edit, and manage vocational training exams</p>
+                        <button class="btn btn-light" onclick="manageExams()"><a href="/manage-exams">Manage-exams </a></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card manage-users-card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">
+                            <i class="fas fa-users"></i> Manage Users
+                        </h5>
+                        <p class="card-text">View and manage student accounts</p>
+                        <button class="btn btn-light" onclick="manageUsers()">Manage Users</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card reports-card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">
+                            <i class="fas fa-chart-bar"></i> Reports & Analytics
+                        </h5>
+                        <p class="card-text">View detailed reports and analytics</p>
+                        <button class="btn btn-light" onclick="viewReports()">View Reports</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card settings-card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">
+                            <i class="fas fa-cog"></i> System Settings
+                        </h5>
+                        <p class="card-text">Configure system settings and preferences</p>
+                        <button class="btn btn-light" onclick="systemSettings()">Settings</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Recent Activity</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="recentActivity">
+                            <p class="text-muted">No recent activity found.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- System Status -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>System Status</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-success">
+                            <strong>System Status:</strong> All systems operational
+                        </div>
+                        <div class="alert alert-info">
+                            <strong>Database:</strong> Connected to MongoDB Atlas
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js"></script>
+    <script src="shared/admin.js"></script>
+    
+</body>
+</html>
